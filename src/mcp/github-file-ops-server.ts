@@ -523,7 +523,7 @@ server.tool(
 
 // Update issue comment tool - 新規追加！
 server.tool(
-  "mcp__github_file_ops__update_issue_comment",
+  "update_issue_comment",
   "Update a GitHub issue comment",
   {
     owner: z.string().describe("Repository owner"),
