@@ -464,7 +464,7 @@ server.tool(
         title,
         body
       };
-      
+
       if (assignees) requestBody.assignees = assignees;
       if (labels) requestBody.labels = labels;
       if (milestone) requestBody.milestone = milestone;
@@ -488,7 +488,7 @@ server.tool(
       }
 
       const result = await response.json();
-      
+
       return {
         content: [
           {
@@ -523,7 +523,7 @@ server.tool(
 
 // Update issue comment tool - 新規追加！
 server.tool(
-  "update_issue_comment",
+  "mcp__github_file_ops__update_issue_comment",
   "Update a GitHub issue comment",
   {
     owner: z.string().describe("Repository owner"),
@@ -558,7 +558,7 @@ server.tool(
       }
 
       const result = await response.json();
-      
+
       return {
         content: [
           {
@@ -612,7 +612,7 @@ server.tool(
         head,
         base
       };
-      
+
       if (draft !== undefined) requestBody.draft = draft;
       if (maintainer_can_modify !== undefined) requestBody.maintainer_can_modify = maintainer_can_modify;
 
@@ -635,7 +635,7 @@ server.tool(
       }
 
       const result = await response.json();
-      
+
       return {
         content: [
           {
@@ -721,7 +721,7 @@ server.tool(
       }
 
       const issues = await response.json();
-      
+
       // Simplify the response
       const simplifiedIssues = issues.map((issue: any) => ({
         id: issue.id,
@@ -736,7 +736,7 @@ server.tool(
         updated_at: issue.updated_at,
         comments: issue.comments
       }));
-      
+
       return {
         content: [
           {
